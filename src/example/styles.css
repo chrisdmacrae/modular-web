@@ -1,0 +1,16 @@
+.example {
+  background: white;
+  color: red;
+  padding: 1rem;
+}
+
+.example h1, .example .title {
+  color: blue;
+  font-size: 5rem;
+}
+
+.example p, .example .body {
+  margin: 5rem 0;
+
+  a { color: blue; }
+}
