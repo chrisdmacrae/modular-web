@@ -31,7 +31,7 @@ This makes maintaining code easier and more efficient.
 
 For example, with scoped CSS & JS, I can create two components with the same JS functions and CSS classes, without worrying about them affecting one another.
 
-With modularization, you can `.red` class on a button that makes the button's background color red, while having a seperate `.red` class on an alert that makes it's font color red. Neither will affect the other, meaning the button text wont be red and the alert backround wont be white.
+With modularization, you can `.red` class on a button that makes the button's background color red, while having a seperate `.red` class on an alert that makes it's font color red. Neither will affect the other, meaning the button text wont be red and the alert background wont be red.
 
 It's a better way to build for the web.
 
