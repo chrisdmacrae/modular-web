@@ -1,9 +1,7 @@
 var gulp                = require('gulp'),
     foreach             = require('gulp-foreach'),
     postCSS             = require('gulp-postcss'),
-    postCSSModules      = require('postcss-modules'),
     postHTML            = require('gulp-posthtml'),
-    postHTMLCSSModules  = require('posthtml-css-modules'),
     named               = require('vinyl-named'),
     rename              = require('gulp-rename'),
     webpack             = require('webpack-stream'),
@@ -37,7 +35,8 @@ function repath(target, removal, pathOnly) {
 gulp.task('css', function() {
   return gulp.src(config.css.src)
     .pipe(postCSS([
-      postCSSModules()
+      require('postcss-modules'),
+      require('cssnano')
     ]))
     .pipe(gulp.dest(config.css.dest));
 });
@@ -50,7 +49,7 @@ gulp.task('html', ['css'], function() {
       
       return stream
         .pipe(postHTML([
-          postHTMLCSSModules([`${currentDir}/${fileName}`, `${currentDir}/styles.css`])
+          require('posthtml-css-modules')([`${currentDir}/${fileName}`, `${currentDir}/styles.css`])
         ]))
     }))
     .pipe(gulp.dest(config.html.dest));
