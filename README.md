@@ -75,9 +75,9 @@ It looks something like this:
 |---- index.html
 |---- bundle.js
 |---- nav/
-|------ nav.css
+|------ styles.css
 |------ nav.html
-|------ nav.js
+|------ script.js
 ```
 
 This will render out the bundle to `public/bundle.min.js` and the nav component to `public/nav`.
