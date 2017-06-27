@@ -4,6 +4,12 @@ webpack = require('webpack');
 module.exports = {
   cache: true,
   debug: true,
+  output: {
+    filename: '[name].min.js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json']
+  },
   module: {
     loaders: [{
       loader: 'babel-loader',
@@ -17,11 +23,8 @@ module.exports = {
       test: /\.json?$/,
       loader: 'json-loader'
     }]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json']
-  },
-  output: {
-    filename: '[name].min.js'
-  }
+  }, 
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+  ]
 };
