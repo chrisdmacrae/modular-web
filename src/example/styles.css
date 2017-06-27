@@ -14,3 +14,11 @@
 
   a { color: blue; }
 }
+
+.class-with-dashes {
+  color: inherit;
+}
+
+.another-class-with-special-characters { 
+  color: inherit;
+}
